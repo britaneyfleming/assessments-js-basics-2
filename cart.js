@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, cur) => acc + cur.price, cart)
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,11 @@ const cart = [
 */
 
 //CODE HERE
-
+function calcFinalPrice (cartTotal, couponValue, tax){
+    x = cartTotal + (cartTotal * tax) - couponValue
+    return x 
+}
+console.log(calcFinalPrice(4, 1, 5))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +84,7 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+My model will be a reservation. The properties will be date, time, number of people, and late. I chose these because they make the most sense for a restaurant website. Date and time will be numbers and late will be a boolean.
 */
 
 /*
@@ -88,3 +93,9 @@ const cart = [
 */
 
 //CODE HERE
+function reservation (date, time, people, late) {
+    this.dateOfReservation = date;
+    this.timeOfReservation = time;
+    this.numOfPeople = people;
+    this.gracePeriod = late;
+}
