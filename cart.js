@@ -35,7 +35,7 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = cart.reduce((acc, cur) => acc + cur.price, cart)
+const summedPrice = cart.reduce((acc, cur) => acc + cur.price, 0)
 
 
 
@@ -93,9 +93,11 @@ My model will be a reservation. The properties will be date, time, number of peo
 */
 
 //CODE HERE
-function reservation (date, time, people, late) {
-    this.dateOfReservation = date;
-    this.timeOfReservation = time;
-    this.numOfPeople = people;
-    this.gracePeriod = late;
+
+
+const firstCustomer = {
+    name: 'Bri Fleming',
+    address: '4321 ABC Street',
+    city: 'Dallas'
+    state: 'Texas'
 }

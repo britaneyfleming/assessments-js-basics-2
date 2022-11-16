@@ -50,8 +50,7 @@ class pizza  {
 */
 
 //CODE HERE
-myPizza = new pizza();
-console.log(myPizza.popularity);
+console.log(pizza.popularity);
 
 
 /*
@@ -62,7 +61,7 @@ console.log(myPizza.popularity);
 */
 
 //CODE HERE
-console.log(myPizza.tags[1])
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -72,7 +71,7 @@ console.log(myPizza.tags[1])
 */
 
 //CODE HERE
-let {price} = myPizza
+let {price} = pizza
 console.log(price)
 
 /*
@@ -83,7 +82,7 @@ console.log(price)
 */
 
 //CODE HERE
-let {category} = myPizza
+let {category} = pizza
 console.log(category)
 
 //////////////////PROBLEM 3////////////////////
@@ -116,7 +115,11 @@ foodArr = ['Pepperoni', 11, 'entree', 9, 6, ['beef', 'meat']]
 
 //CODE HERE
 
-const filteredFood = foodArr.filter('vegetarian')
+const filteredFood = foodArr.filter(food => {
+    if(food.tags.includes('kids')) {
+        return food
+    }
+})
 console.log(filteredFood)
 
 
@@ -161,7 +164,16 @@ console.log(filteredFood)
 */
 
 //CODE HERE
-filterByProperty(property, number, type)
+const filterByProperty = (property, number, type) => {
+    const filtered = foodArr.filter(food => {
+        if(type === 'above'){
+            return food[property] >= number
+        } else {
+            return food[property] <= number
+        }
+    })
+    return filtered
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -171,3 +183,4 @@ filterByProperty(property, number, type)
 */
 
 //CODE HERE
+console.log(filterByProperty('price',8,'below'))

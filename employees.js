@@ -25,8 +25,8 @@ class Employee {
         this.name = name;
         this.shifts = shifts;
       } 
-      status = 'queued'
-      getSchedule(newSchedule){this.schedule = newSchedule, this.shifts
+      
+      getSchedule(){
         console.log(`${this.name} works on ${this.shifts}`)}
     }
 
@@ -42,7 +42,7 @@ class Employee {
 */
 
 //CODE HERE
-empOne = ('Jess', 'weekday mornings, weekday afternoons')
+let empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 /*
     Call the `getSchedule` method on the
     `empOne` object.
@@ -64,7 +64,7 @@ empOne.getSchedule();
 */
 
 //CODE HERE
-empTwo(...empOne)
+const empTwo = {...empOne, name: 'Nick'}
 
 
 
@@ -94,16 +94,16 @@ empTwo(...empOne)
 //CODE HERE
 class Manager {
     constructor(name, shifts, employees) {
-        this.name = name;
-        this.shifts = shifts;
+        super(name, shifts, employees)
         this.employees = employees
       } 
       getEmployees(newMgr){this.Mgr = newMgr, this.employees
         console.log(`${this.name} manages ${this.employees}`)}
 
-        addEmployee(newEmployee){this.nEmployee = addEmployee, this.employees
+        addEmployee(newEmployee){this.newEmployee = addEmployee, this.employees
             this.employees.push['']
     }
+}
 
 
 /*
@@ -118,7 +118,7 @@ class Manager {
 */
 
 //CODE HERE
-manager = new Management ('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
+let manager = new Manager ('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 
 /*
     Call the `getEmployees` method on the

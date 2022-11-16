@@ -51,13 +51,14 @@ const greetUser = (username) =>{
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-canWeDeliver = zipcode => {
-    let (i = 0; i < deliveryAreaZipCodes.length; i++) {
-        if(i === deliveryAreaZipCodes.length)
-        console.log(`You're in our delivery zone!`)
-    } else {
-        console.log(`Sorry, we can't deliver to that address`)
+const canWeDeliver = zipCode => {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if(deliveryAreaZipCodes [i] === zipCode){
+        return console.log(`You're in our delivery zone!`)
+    } 
+        
     }
+    return console.log(`Sorry, we can't deliver to that address`)
 }
 
 
@@ -79,7 +80,9 @@ canWeDeliver = zipcode => {
 */
 
 // CODE HERE
-canWeDeliverTwo = zipcodes.includes(deliveryAreaZipCodes.length)
+canWeDeliverTwo = zipCode => {
+    deliveryAreaZipCodes.includes(zipCode) ? console.log(`You're in our delivery zone!`): console.log(`Sorry, we can't deliver to that address`)
+}
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -115,7 +118,7 @@ const deals = [
 */
 
 //CODE HERE
-deals.replace('15%', '10%')
+deals[0].title = deals[0].title.replace('15', '10')
 
 
 /*
@@ -132,4 +135,4 @@ deals.replace('15%', '10%')
 */
 
 //CODE HERE
-deals.replace('March', 'April').trim
+deals[1].desc = [1].desc.trim().replace('March', 'April')
